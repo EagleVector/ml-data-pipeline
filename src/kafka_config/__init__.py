@@ -5,11 +5,11 @@ import os
 SECURITY_PROTOCOL="SASL_SSL"
 SSL_MACHENISM="PLAIN"
 API_KEY = os.getenv('API_KEY',None)
-ENDPOINT_SCHEMA_URL  = os.getenv('ENDPOINT_SCHEMA_URL',None)
 API_SECRET_KEY = os.getenv('API_SECRET_KEY',None)
 BOOTSTRAP_SERVER = os.getenv('BOOTSTRAP_SERVER',None)
-SECURITY_PROTOCOL = os.getenv('SECURITY_PROTOCOL',None)
-SSL_MACHENISM = os.getenv('SSL_MACHENISM',None)
+#SECURITY_PROTOCOL = os.environ.get('SECURITY_PROTOCOL',None)
+#SSL_MACHENISM = os.environ.get('SSL_MACHENISM',None)
+ENDPOINT_SCHEMA_URL  = os.getenv('ENDPOINT_SCHEMA_URL',None)
 SCHEMA_REGISTRY_API_KEY = os.getenv('SCHEMA_REGISTRY_API_KEY',None)
 SCHEMA_REGISTRY_API_SECRET = os.getenv('SCHEMA_REGISTRY_API_SECRET',None)
 
@@ -24,7 +24,7 @@ def sasl_conf():
                 'sasl.username': API_KEY,
                 'sasl.password': API_SECRET_KEY
                 }
-    print(sasl_conf)
+    #print(sasl_conf)
     return sasl_conf
 
 
@@ -38,4 +38,3 @@ def schema_config():
 
 if __name__ == '__main__':
     sasl_conf()
-
